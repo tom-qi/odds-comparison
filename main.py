@@ -19,6 +19,8 @@ import pandas as pd
 
     # Create test cases
 
+    # explore https://the-odds-api.com/ integration. Unfortunately free model only allows 500 request/mo.
+
 def check_spreadsheet_last_updated():
     # URL to download the spreadsheet
     # Procedure to get url was as follows
