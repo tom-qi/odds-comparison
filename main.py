@@ -4,9 +4,21 @@ import schedule
 import time
 import pandas as pd
 
+#TODO:
+    # match and compare 
+
+    # edge cases, tests, considerations. Create Assertions where necessary
+        # 1. The AI model did not calculate odds for that player/prop
+        # 2. a match from oddtrader is actually live
+    
+    # Create test cases
 
 def check_spreadsheet_last_updated():
-    # URL from which to download the spreadsheet
+    # URL to download the spreadsheet
+    # Procedure to get url was as follows
+    # Click on the "generate-excel" request in the Network tab to open its details.
+    # Headers: Look under the "Headers" tab to find the full URL of the request in the "Request URL" section.
+
     download_url = 'https://www.sports-ai.dev/api/generate-excel'
 
     # Send a HEAD request to get the headers only
@@ -87,15 +99,15 @@ def extract_table_to_dataframe(url):
     # Parse the HTML content with BeautifulSoup
     soup = BeautifulSoup(html_content, 'html.parser')
 
-    # Find and parse the table. You will need to inspect the webpage to get the correct table identifier.
-    # Example:
+    # Find and parse the table. IDK how to find the table id.
+    # gotta inspect element and find something like...
     # table = soup.find('table', {'id': 'table_id'})
 
+# TODO:
+
     # Use pandas to read the table HTML into a DataFrame
-    # Example if there's one table:
     # df = pd.read_html(str(table))[0]
 
-    # If there are multiple tables, you'll need to find the correct one by index or condition
     # Example if there's more than one table:
     # dfs = pd.read_html(str(soup))
     # df = dfs[0]  # or whichever index the correct table is
