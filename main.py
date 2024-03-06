@@ -10,11 +10,13 @@ import pandas as pd
 
     # Figure out how to standardize names and clean data from beautifulsoup if necessary
 
-    # edge cases, tests, considerations. Create Assertions where necessary
+    # edge cases, tests, considerations. Create error assertions where necessary
         # 1. The AI model did not calculate odds for that player/prop
         # 2. a match from oddtrader is actually live
         # 3. Names incorrect
     
+    # Create requirements.txt
+
     # Create test cases
 
 def check_spreadsheet_last_updated():
@@ -76,7 +78,7 @@ def probability_to_decimal_odds(probability):
         return 0
     return round(1 / probability, 2)
 
-# The function to convert probabilities into American odds
+# Function to convert probabilities into American odds
 def probability_to_american_odds(probability):
     if probability >= 0.5:
         return round(-100 / (probability / (1 - probability)), 2)
@@ -93,7 +95,7 @@ def add_odds_column(spreadsheet):
     spreadsheet['S'] = spreadsheet['H'].apply(probability_to_decimal_odds)
     spreadsheet['T'] = spreadsheet['I'].apply(probability_to_american_odds)
     spreadsheet['U'] = spreadsheet['I'].apply(probability_to_decimal_odds)
-# I'll put this in a loop or something later
+# TODO: I'll put this in a loop or something later
 
 def extract_table_to_dataframe(url):
     # Retrieve the HTML content from the website
