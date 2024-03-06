@@ -32,22 +32,6 @@ last_updated = check_spreadsheet_last_updated()
 
 
 def download_latest_spreadsheet():
-    # URL of the page where the spreadsheet link is available
-    url = 'https://www.sports-ai.dev/predictions'
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-
-    # link to the Excel was not immediately available...I will need to figure
-    # out a way to get the url from response
-
-    # If it's a new file, download it
-    # response = requests.get(download_link)
-    # with open('path/to/save/spreadsheet.xlsx', 'wb') as file:
-    #     file.write(response.content)
-    # Update the info of the last downloaded file
-
-
-def download_latest_spreadsheet():
     # URL from which to download the spreadsheet
     download_url = 'https://www.sports-ai.dev/api/generate-excel'
 
