@@ -5,11 +5,15 @@ import time
 import pandas as pd
 
 #TODO:
-    # match and compare 
+    # How can pandas match the players (and their respective odds) 
+    # from oddstrader to the model?
+
+    # Figure out how to standardize names and clean data from beautifulsoup if necessary
 
     # edge cases, tests, considerations. Create Assertions where necessary
         # 1. The AI model did not calculate odds for that player/prop
         # 2. a match from oddtrader is actually live
+        # 3. Names incorrect
     
     # Create test cases
 
