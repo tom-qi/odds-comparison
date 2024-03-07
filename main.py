@@ -135,3 +135,17 @@ schedule.every(1).hours.do(job)
 while True:
     schedule.run_pending()
     time.sleep(1)
+
+def calculate_edge(model_probability, best_odds):
+    """
+    Calculate the betting edge.
+
+    :param model_probability: The probability of the outcome according to the model (as a decimal, e.g., 0.5 for 50%)
+    :param best_odds: The best decimal odds available for the outcome
+    :return: The calculated edge as a percentage. A positive edge suggests a bet with expected value above the bookmaker's odds.
+    """
+    decimal_odds = best_odds
+    implied_probability = 1 / decimal_odds
+    edge = (model_probability - implied_probability) * 100  # Convert to percentage
+    
+    return edge
